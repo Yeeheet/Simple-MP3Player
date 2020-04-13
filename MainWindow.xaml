@@ -1,0 +1,104 @@
+﻿<Window x:Class="Projet_Final_CS___Music_Player.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projet_Final_CS___Music_Player"
+        mc:Ignorable="d"
+        Title="Music Player" 
+        ResizeMode="CanMinimize" SizeToContent="Manual" Height="482.091" Width="682">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <!-- FILE -->
+            <MenuItem Header="_File">
+                <MenuItem Header="_Import song" Click="ImportSong"/>
+                <MenuItem Header="_Import folder" Click="ImportFolder"/>
+                <Separator/>
+                <MenuItem Header="_Export playlist to XML file" Click="ExportPlaylist"/>
+                <MenuItem Header="_Import playlist from XML file" Click="ImportPlaylist"/>
+                <Separator/>
+                <MenuItem Header="_Exit" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Options" Click="Options_Click"/>
+            <MenuItem Header="_YoutubeDownloder" Click="YoutubeDownloader_Click"/>
+
+        </Menu>
+
+        <Grid Height="Auto" Width="Auto">
+            <!--Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0*"/>
+                <ColumnDefinition Width="183*"/>
+                <ColumnDefinition Width="487*"/>
+            </-->
+            <Image Name="AlbumImage" HorizontalAlignment="Left" Height="331" Margin="22,10,0,0" VerticalAlignment="Top" Width="398" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <TextBlock Name="artistLabel" Text="" HorizontalAlignment="Left" Margin="425,10,0,0" VerticalAlignment="Top" Width="187" FontSize="18"/>
+            <TextBlock Name="albumLabel" Text="" HorizontalAlignment="Left" Margin="425,58,0,0" VerticalAlignment="Top" Width="187" FontSize="18"/>
+            <TextBlock Name="titreLabel" Text="" HorizontalAlignment="Left" Margin="425,34,0,0" VerticalAlignment="Top" Width="187" FontSize="18"/>
+            <Button Name="playBtn"  HorizontalAlignment="Left" Margin="191,393,0,0" VerticalAlignment="Top" Width="44" Click="playBtn_Click" Height="35" Background="Transparent" BorderThickness="0">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="playImg" Height="31" Margin="3,0" />
+                </StackPanel>
+            </Button>
+            <Button Name="stopBtn" HorizontalAlignment="Left" Margin="142,396,0,0" VerticalAlignment="Top" Width="44" Click="stopBtn_Click" Background="Transparent" BorderThickness="0" Height="31">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="stopImg" Height="27" Margin="5,0" />
+                </StackPanel>
+            </Button>
+            <Button Name="pauseBtn" HorizontalAlignment="Left" Margin="240,396,0,0" VerticalAlignment="Top" Width="44" Click="pauseBtn_Click" Background="Transparent" BorderThickness="0" Height="31">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="pauseImg" Height="27" Margin="5,0" />
+                </StackPanel>
+            </Button>
+            <ProgressBar Name="ProgressBar" HorizontalAlignment="Left" Height="10" Margin="22,346,0,0" VerticalAlignment="Top" Width="400" Background="#E0E0E0" Foreground="YellowGreen" BorderThickness="0" MouseLeftButtonDown="ProgressBar_MouseLeftButtonDown" Grid.Column="1" Grid.ColumnSpan="2"/>
+            <TextBlock Name="songCurentPosition" HorizontalAlignment="Left" Margin="179,366,0,0" TextWrapping="Wrap" Text="0:00" VerticalAlignment="Top"/>
+            <TextBlock Name="songDuration" HorizontalAlignment="Left" Margin="228,366,0,0" TextWrapping="Wrap" Text="0:00" VerticalAlignment="Top"/>
+            <Label Content="/" HorizontalAlignment="Left" Margin="206,361,0,0" VerticalAlignment="Top"/>
+
+            <Expander Header="Playlist" HorizontalAlignment="Left" Height="411" Margin="630,0,-551,0" VerticalAlignment="Top" Width="597" RenderTransformOrigin="0.5,0.5" Expanded="Expander_Expanded" Collapsed="Expander_Collapsed" ExpandDirection="Right">
+                <ListView Margin="0,0,0,-2" Name="Playlist" Width="557" BorderThickness="0" MouseDoubleClick="Playlist_MouseDoubleClick">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Header="Title" Width="150" DisplayMemberBinding="{Binding title}" />
+                            <GridViewColumn Header="Artist" Width="150" DisplayMemberBinding="{Binding artist}" />
+                            <GridViewColumn Header="Album" Width="150" DisplayMemberBinding="{Binding album}" />
+                            <GridViewColumn Header="Duration" Width="100" DisplayMemberBinding="{Binding _duration}" />
+                        </GridView>
+                    </ListView.View>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <EventSetter Event="PreviewMouseRightButtonDown" Handler="ListViewItem_PreviewMouseRightButtonDown" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Expander>
+
+            <Slider HorizontalAlignment="Left" Margin="462,342,0,0" VerticalAlignment="Top" Width="150" Maximum="1" Value="0.5" ValueChanged="VolumeSlider_ValueChanged"/>
+
+            <Button Name="RepeatOnceBtn" HorizontalAlignment="Left" Margin="22,397,0,0" VerticalAlignment="Top" Width="27" Height="23" Click="RepeatOnce_Click" Background="Transparent" BorderThickness="0">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="refreshImg" Height="18" Margin="0,0,20,0" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="RepeatBtn" HorizontalAlignment="Left" Margin="22,369,0,0" VerticalAlignment="Top" Width="27" Height="23" Click="Repeat_Click" Background="Transparent" BorderThickness="0">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="repeatImg" Height="18" Margin="0,0,20,0" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="fastforward" HorizontalAlignment="Left" Margin="395,369,0,0" VerticalAlignment="Top" Width="27" Height="23" Click="fastforward_Click" Background="Transparent" BorderThickness="0">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="fastforwardImg" Height="18" Margin="0,0,20,0" />
+                </StackPanel>
+            </Button>
+
+            <Button Name="fastbackward" HorizontalAlignment="Left" Margin="393,397,0,0" VerticalAlignment="Top" Width="27" Height="23" Click="fastbackward_Click" Background="Transparent" BorderThickness="0">
+                <StackPanel Height="38" Width="40">
+                    <Image x:Name="fastbackwardImg" Height="18" Margin="0,0,20,0" />
+                </StackPanel>
+            </Button>
+
+        </Grid>
+    </DockPanel>
+</Window>

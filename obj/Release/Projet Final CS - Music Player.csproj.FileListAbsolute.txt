@@ -1,0 +1,35 @@
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Projet Final CS - Music Player.exe.config
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Projet Final CS - Music Player.exe
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Projet Final CS - Music Player.pdb
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\CliWrap.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\LtGt.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Newtonsoft.Json.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\NReco.VideoConverter.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\policy.2.0.taglib-sharp.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Sprache.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\taglib-sharp.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\YoutubeExplode.dll
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\CliWrap.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\LtGt.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Newtonsoft.Json.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\NReco.VideoConverter.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\Sprache.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\YoutubeExplode.xml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\bin\Release\policy.2.0.taglib-sharp.config
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.csprojAssemblyReference.cache
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Downloader.g.cs
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\MainWindow.g.cs
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Options.g.cs
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\App.g.cs
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player_MarkupCompile.cache
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player_MarkupCompile.lref
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Downloader.baml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\MainWindow.baml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Options.baml
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.g.resources
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet_Final_CS___Music_Player.Properties.Resources.resources
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.csproj.GenerateResource.cache
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.csproj.CopyComplete
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.exe
+C:\Users\root\Desktop\Cours\B2\C#\Labo\Projet Final CS - Music Player\obj\Release\Projet Final CS - Music Player.pdb
