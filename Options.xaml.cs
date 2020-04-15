@@ -76,6 +76,8 @@ namespace Projet_Final_CS___Music_Player
 
 			key.Close();
 
+			trayChanged = true;
+
 			OptionsChanged options = optionsChanged;
 			if (options != null) options(this, EventArgs.Empty);
 		}

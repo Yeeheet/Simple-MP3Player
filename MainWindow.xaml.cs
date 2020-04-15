@@ -55,6 +55,7 @@ namespace Projet_Final_CS___Music_Player
 		int nbRepeats = 0;
 
 		bool dynamicColor = false;
+		bool minTray = false;
 
 		private readonly DispatcherTimer timer;
 
@@ -74,8 +75,23 @@ namespace Projet_Final_CS___Music_Player
 
 			currentFolder = Environment.CurrentDirectory;
 
-			Microsoft.Win32.RegistryKey key = null;
+			trayMenu = new ContextMenu();
+			trayMenu.MenuItems.Add("Play", TrayPlayClick);
+			trayMenu.MenuItems.Add("Pause", TrayPauseClick);
+			trayMenu.MenuItems.Add("Stop", TrayStopClick);
+			trayMenu.MenuItems.Add("Next", TrayNextClick);
+			trayMenu.MenuItems.Add("Exit", TrayExitClick);
 
+			this.StateChanged += new EventHandler(Window_StateChanged);
+
+			trayIcon = new NotifyIcon
+			{
+				Icon = Properties.Resources.stop,
+				ContextMenu = trayMenu
+			};
+			trayIcon.MouseClick += new MouseEventHandler(TrayIconMouseClick);
+
+			Microsoft.Win32.RegistryKey key = null;
 			try
 			{
 				if ((key = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("Software\\CSMP3Player", true)) == null)
@@ -98,21 +114,7 @@ namespace Projet_Final_CS___Music_Player
 
 			if(Convert.ToBoolean(key.GetValue("InTray")) == true)
 			{
-				trayMenu = new ContextMenu();
-				trayMenu.MenuItems.Add("Play", TrayPlayClick);
-				trayMenu.MenuItems.Add("Pause", TrayPauseClick);
-				trayMenu.MenuItems.Add("Stop", TrayStopClick);
-				trayMenu.MenuItems.Add("Next", TrayNextClick);
-				trayMenu.MenuItems.Add("Exit", TrayExitClick);
-
-				this.StateChanged += new EventHandler(Window_StateChanged);
-
-				trayIcon = new NotifyIcon
-				{
-					Icon = Properties.Resources.stop,
-					ContextMenu = trayMenu
-				};
-				trayIcon.MouseClick += new MouseEventHandler(TrayIconMouseClick);
+				minTray = true;
 			}
 
 			savePath = Convert.ToString(key.GetValue("SaveDirectory"));
@@ -355,16 +357,21 @@ namespace Projet_Final_CS___Music_Player
 		#region Events
 		private void Window_StateChanged(object sender, EventArgs e)
 		{
-			if (this.WindowState == WindowState.Minimized)
+			Console.WriteLine(minTray);
+
+			if (minTray == true)
 			{
-				this.ShowInTaskbar = false;
-				trayIcon.Visible = true;
-			}
-			else if (this.WindowState == WindowState.Normal)
-			{
-				trayIcon.Visible = false;
-				this.ShowInTaskbar = true;
-				this.WindowState = WindowState.Normal;
+				if (this.WindowState == WindowState.Minimized)
+				{
+					this.ShowInTaskbar = false;
+					trayIcon.Visible = true;
+				}
+				else if (this.WindowState == WindowState.Normal)
+				{
+					trayIcon.Visible = false;
+					this.ShowInTaskbar = true;
+					this.WindowState = WindowState.Normal;
+				}
 			}
 		}
 
@@ -574,24 +581,11 @@ namespace Projet_Final_CS___Music_Player
 			{
 				if (dlg.trayCheck.IsChecked == true)
 				{
-					trayMenu = new ContextMenu();
-					trayMenu.MenuItems.Add("Play", TrayPlayClick);
-					trayMenu.MenuItems.Add("Pause", TrayPauseClick);
-					trayMenu.MenuItems.Add("Stop", TrayStopClick);
-					trayMenu.MenuItems.Add("Exit", TrayExitClick);
-
-					this.StateChanged += new EventHandler(Window_StateChanged);
-
-					trayIcon = new NotifyIcon
-					{
-						Icon = Properties.Resources.stop,
-						ContextMenu = trayMenu
-					};
-					trayIcon.MouseClick += new MouseEventHandler(TrayIconMouseClick);
+					minTray = true;
 				}
 				else
 				{
-					this.StateChanged -= new EventHandler(Window_StateChanged);
+					minTray = false;
 				}
 
 				dlg.trayChanged = false;
